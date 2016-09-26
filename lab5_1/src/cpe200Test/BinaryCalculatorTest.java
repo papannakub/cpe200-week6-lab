@@ -545,7 +545,7 @@ public class BinaryCalculatorTest {
         secondOperand = new DoubleOperand(2.0);
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
-        assertEquals("9", binaryCalculator.multiply());
+        assertEquals("9", binaryCalculator.power());
     }
 
     @Test
