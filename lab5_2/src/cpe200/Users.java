@@ -8,23 +8,52 @@ import java.util.ArrayList;
  */
 public class Users {
     public ArrayList<IUser> userList;
+    public Users(){
+        userList = new ArrayList<IUser>();
+    }
 
     public void addUser(IUser user)
     {
+        userList.add(user);
+
     }
 
     public void addUser(String userName, String password)
     {
+        User  user= new User();
+        user.setUserName(userName);
+        user.setPassword(password);
+        userList.add(user);
     }
 
     public void deleteUser(IUser user)
     {
+        if(userList.isEmpty())
+        {
+            throw new RuntimeException();
+        }
+        for(int i =0 ; i < userList.size() ; i++)
+        {
+            if(userList.get(i)== user)
+            {
+                userList.remove(i);
+            }
+        }
 
     }
 
     public boolean exists(IUser user)
     {
+        int ans=0;
+        for(int i =0 ; i < userList.size() ; i++)
+        {
+            if(userList.get(i)== user)
+            {
+                return true;
+            }
+        }
         return false;
+
     }
 
     public boolean usernameExists(String username)
@@ -35,16 +64,26 @@ public class Users {
     /* This method should return null when the user with username is not in the list */
     public IUser getUserByUsername(String userName)
     {
-        return null;
+        User  user= new User();
+        user.setUserName(userName);
+        int ans=0;
+        for(int i =0 ; i < userList.size() ; i++)
+        {
+            if(userList.get(i)== user)
+            {
+                ans=i;
+            }
+        }
+        return userList.get(ans);
     }
 
     public int count()
     {
-        return 0;
+        return userList.size();
     }
 
     public IUser[] getUserArray()
     {
-        return null;
+        return userList.toArray(new User[userList.size()]);
     }
 }
