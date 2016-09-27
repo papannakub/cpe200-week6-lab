@@ -1,7 +1,6 @@
-# Week 5 - Lab: Exception Handling.
+# Week 6 - Lab: Interfaces.
 
-This lab will help you learn how to handle exception (i.e., error)
-in your code gracefully.
+This lab will help you learn how to use interface in simple java program.
 
 The objectives of this week are following:
 * Simple Data encapsulation and data validation.
